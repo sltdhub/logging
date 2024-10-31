@@ -61,7 +61,7 @@ func NewLogger() *Logger {
 	}
 }
 
-func (l *Logger) Fatal(msg string, args ...any) {
+func (l *Logger) Fatal(msg string, args ...interface{}) {
 	l.Log(context.TODO(), LevelFatal, msg, args...)
 	os.Exit(1)
 }
